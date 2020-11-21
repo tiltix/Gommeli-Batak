@@ -1,3 +1,3 @@
-# Gommeli-Batak-function
-js gömmeli batak fonksiyonu<br>
+# Gommeli-Batak
+Js Gömmeli Batak<br>
 Kartlar için Json verileri eklendi.
