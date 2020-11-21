@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <title>Gömmeli Bata | Ördek</title>
+    <script>
+      var kartlar = ["macaAs",
+"macaPapaz",
+"macaKız",
+"macaJoker",
+"maca10",
+"maca9",
+"maca8",
+"maca7",
+"maca6",
+"maca5",
+"maca4",
+"maca3",
+"maca2",
+"kupaAs",
+"kupaPapaz",
+"kupaKız",
+"kupaJoker",
+"kupa10",
+"kupa9",
+"kupa8",
+"kupa7",
+"kupa6",
+"kupa5",
+"kupa4",
+"kupa3",
+"kupa2",
+"karoAs",
+"karoPapaz",
+"karoKız",
+"karoJoker",
+"karo10",
+"karo9",
+"karo8",
+"karo7",
+"karo6",
+"karo5",
+"karo4",
+"karo3",
+"karo2",
+"sinekAs",
+"sinekPapaz",
+"sinekKız",
+"sinekJoker",
+"sinek10",
+"sinek9",
+"sinek8",
+"sinek7",
+"sinek6",
+"sinek5",
+"sinek4",
+"sinek3",
+"sinek2",
+];
+	</script>
+	<!-- 
+
+		
+	-->
+	<style>
+		table , td{
+			border: 0px solid black;
+		}
+		table{
+			width: 100%;
+			border-collapse: collapse;
+			text-align: center;
+		}
+	</style>
+  </head>
+  <body>
+
+	<!-- Modalımzı -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-fullscreen">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h4 class="modal-title text-secondary" id="exampleModalLabel">Kartların</h4>
+			  <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div id="kartlarin2" class="modal-body">
+			 <!-- Karların buraya geliyor koçero -->
+			</div>
+			<hr>
+			<div id="kartlarin3" class="modal-body">
+				<h1 class="">Kaç Alırın Var ?</h1>
+				<button type="button" class="btn btn-success">8</button>
+				<button type="button" class="btn btn-success">9</button>
+				<button type="button" class="btn btn-success">10</button>
+				<button type="button" class="btn btn-warning text-white">11</button>
+				<button type="button" class="btn btn-warning text-white">12</button>
+				<button type="button" class="btn btn-warning text-white">13</button>
+				<button type="button" class="btn btn-danger">14</button>
+				<button type="button" class="btn btn-danger">15</button>
+				<button type="button" class="btn btn-danger">16</button>
+
+			</div>
+
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-primary pl-5 pr-5" data-dismiss="modal">Pas</button>
+			</div>
+		  </div>
+		</div>
+	  </div>
+
+
+    <div class="text-secondary container pt-1">
+	<h5 class="text-center">JS Gömmeli Batak</h5>
+	<div class="card">
+		<div class="card-body">
+		<div class="row">
+			<div class="col-md-6">
+				<div id="oyunAlani">
+					<h6>Oyun Alanı</h6>
+					<table>
+						<tr>
+							<td></td>
+							<td class="text-center">3.Oyuncu<br><span id="oyuncu3"><img height="" width="75" src="./kartlar/kapali.png"></span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td >2.Oyuncu <br> <span id="oyuncu2"><img height="" width="75" src="./kartlar/kapali.png"></span></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>1.Oyuncu<b>(Sen)</b><br><span id=""></span><img id="oyuncu1" height="" width="75" src="./kartlar/kapali.png"></span></td>
+							<td></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="d-flex flex-row-reverse col-md-6">
+				<div id="masa">
+					<h6>Masadaki Kartlar</h6>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div></div>
+	
+	<div class="container-fluid text-center text-danger pt-2">
+		<div class="card">
+			<div class="card-body"><h4>Kartların</h6>
+				<div id="kartlarin" class="pt-2"></div> 
+			</div>
+		</div>
+   	</div>
+	
+	<footer style="position: fixed;bottom: 10px; left: 50%;" class="h1 text-center">
+	<!-- 
+		• Gereksiz kod kalabalığı düzeltildi.
+		• Kart resimleri eklendi ve ekrana yazıldı.
+
+		Yapılacaklar
+		Giriş yapana sadece 1. Oyuncu Kartları gösterilecek.
+		Oyun alanı oluşturulacak.
+		kaç alırı olduğunu soracak.(Beta (1 Kere))
+
+
+		=>=>=> 
+		=>=>
+		=> kartlarına bak ve söyle kaç alırsın.
+
+
+
+	-->
+		<a class="text-secondary" href="https://github.com/rafetcan" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+	</footer>
+	<div id="demos">
+
+	</div>
+  
+
+
+    <script>
+
+		var newKartlar = kartlar.map((val,index)=>{
+			return {key:index,	value:val};
+		})
+		console.log(newKartlar)
+
+
+
+	for (const key in kartlar) {
+		if (kartlar.hasOwnProperty(key)) {
+			const element = kartlar[key];
+			document.getElementById('demos').innerHTML += '"'+element +'",<br>';
+		}
+	}
+
+	var MASA_KARTLARI = [];
+	var OYUNCU_KARTLARI1 = [], OYUNCU_KARTLARI2 = [], OYUNCU_KARTLARI3 = [];
+
+
+	// FONKSİYONLAR
+	function karistir(dizi) { // verilerimiz harmanlıyoruz moruQ
+		for (let i = dizi.length - 1; i > 0; i--) {
+			let j = Math.floor(Math.random() * (i + 1)); 
+		
+			[dizi[i], dizi[j]] = [dizi[j], dizi[i]];
+		}
+	}
+	
+	karistir(kartlar);
+	
+
+	function DAGIT(kartlar) {
+		// MASA
+		for (let masa = 0; masa <= 3; masa++) {
+			const element = kartlar[masa];
+			MASA_KARTLARI.push(element);
+		}
+		// document.getElementById("masa").innerHTML = "";
+		for (var i=0; i<MASA_KARTLARI.length; i++)
+		{
+			document.getElementById("masa").innerHTML += "<img class='pl-1' width='75' src='./kartlar/kapali.png'>";
+			// document.writeln("<img height='75' width='50' src='./kartlar/kapali.png'<br>");
+			// document.writeln("<img height='75' width='50' src='./kartlar/" + MASA_KARTLARI[i] + ".png'<br>");
+		}
+		// 1.Oyuncu
+		for (let i = 4; i <= 19; i++) {
+			const element = kartlar[i];
+			OYUNCU_KARTLARI1.push(element);
+		}
+		
+		for (var i=0; i<OYUNCU_KARTLARI1.length; i++)
+		{
+			/*
+				1.Maça 
+				2.Kupa
+				3.Sinek
+				4.Karo
+			*/
+			document.getElementById('kartlarin').innerHTML += "<img onclick='tıklananKart(this)' id='kartn"+i+"' class='p-1' alt='"+OYUNCU_KARTLARI1[i]+"'width='120' src='./kartlar/" + OYUNCU_KARTLARI1[i] + ".png'>";
+			document.getElementById('kartlarin2').innerHTML += "<img class='p-1' alt='"+OYUNCU_KARTLARI1[i]+"'width='120' src='./kartlar/" + OYUNCU_KARTLARI1[i] + ".png'>";
+			// document.writeln("<img height='75' width='50' src='./kartlar/" + OYUNCU_KARTLARI1[i] + ".png'>");
+		}
+		// 2.Oyuncu
+		for (let i = 20; i <= 35; i++) {
+			const element = kartlar[i];
+			OYUNCU_KARTLARI2.push(element);
+		}
+		// document.write('<hr><br>2. OYUNCU KARTLARI : <br>');
+		// for (var i=0; i<OYUNCU_KARTLARI2.length; i++)
+		// {
+		// 	document.writeln("<img height='75' width='50' src='./kartlar/kapali.png'<br>");
+		// 	// document.writeln("<img height='75' width='50' src='./kartlar/" + OYUNCU_KARTLARI2[i] + ".png'<br>");
+		// }
+		// 3.Oyuncu
+		for (let i = 36; i <= 51; i++) {
+			const element = kartlar[i];
+			OYUNCU_KARTLARI3.push(element);
+		}
+		// document.write('<hr><br>3. OYUNCU KARTLARI : <br>');
+		// for (var i=0; i<OYUNCU_KARTLARI3.length; i++)
+		// {
+		// 	document.writeln("<img height='75' width='50' src='./kartlar/kapali.png'<br>");
+		// 	// document.writeln("<img height='75' width='50' src='./kartlar/" + OYUNCU_KARTLARI3[i] + ".png'<br>");
+		// }
+	}
+	DAGIT(kartlar);
+
+	
+
+	// Yazdırıyoruz
+	// document.writeln("<img src='./kartlar/'" + MASA_KARTLARI + );
+	console.log(MASA_KARTLARI)
+	console.log(OYUNCU_KARTLARI1);
+	console.log(OYUNCU_KARTLARI2);
+	console.log(OYUNCU_KARTLARI3);
+	document.writeln('<br><br><br>');
+
+	function tıklananKart(ths) {
+		$('#'+ths.id).click((event)=>{
+			$(event.target).hide();
+			var srcmiz = document.getElementById(ths.id).src;
+			// console.log(srcmiz)
+			$('#oyuncu1').attr('src',ths.src);
+		});
+	}
+	$(document).ready(()=>{
+		//$('#modal').click();
+	})
+
+
+
+	</script>
+	<!-- Button trigger modal -->
+<button id="modal" type="button" class="btn btn-primary invisible" data-toggle="modal" data-target="#exampleModal">
+	Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js" integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD" crossorigin="anonymous"></script>
+  </body>
+</html>
+
