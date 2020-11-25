@@ -1,0 +1,68 @@
+    <div id="root"></div> 
+      
+    <!-- Script to use Array map() Method -->
+    <script> 
+      
+        var el = document.getElementById('root'); 
+        var kartlar = ["macaAs",
+"macaPapaz",
+"macaKız",
+"macaJoker",
+"maca10",
+"maca9",
+"maca8",
+"maca7",
+"maca6",
+"maca5",
+"maca4",
+"maca3",
+"maca2",
+"kupaAs",
+"kupaPapaz",
+"kupaKız",
+"kupaJoker",
+"kupa10",
+"kupa9",
+"kupa8",
+"kupa7",
+"kupa6",
+"kupa5",
+"kupa4",
+"kupa3",
+"kupa2",
+"karoAs",
+"karoPapaz",
+"karoKız",
+"karoJoker",
+"karo10",
+"karo9",
+"karo8",
+"karo7",
+"karo6",
+"karo5",
+"karo4",
+"karo3",
+"karo2",
+"sinekAs",
+"sinekPapaz",
+"sinekKız",
+"sinekJoker",
+"sinek10",
+"sinek9",
+"sinek8",
+"sinek7",
+"sinek6",
+"sinek5",
+"sinek4",
+"sinek3",
+"sinek2",
+];
+          
+        var newArr = kartlar.map(function(val, index){ 
+            return {key:index, value:val}; 
+        }) 
+          
+        console.log(newArr) 
+          
+        el.innerHTML = JSON.stringify(newArr); 
+    </script> 
